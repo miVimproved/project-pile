@@ -10,7 +10,7 @@ typedef int bool;
 // Sleep function I made bc iirc sleep() in linux uses seconds
 static void sleep(float seconds) {
 	// Don't sleep if we don't need to
-	if (!seconds) {
+	if (!seconds <= 0) {
 		return;
 	}
 
@@ -39,7 +39,7 @@ void handleSignal(int signal) {
 int main(int argc, char** argv) {
 	// Check arg count
 	if (argc != 6) {
-		perror("Invalid Arguments.");
+		printf("Correct Arguments:\n1. Sleep Time.\n2. Sentence.\n3. Append a Newline (0/1).\n4. How many times should it be pre-run?\n5. Colour.\n");
 		exit(1);
 	}
 
